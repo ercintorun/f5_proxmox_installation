@@ -1,5 +1,5 @@
 
-##PROXMOX CONFIGS FOR F5 
+## PROXMOX CONFIGS FOR F5 
 SCSI disk 
 440fx v8.0
 Memory 8192
@@ -7,7 +7,7 @@ Memory 8192
 
 
 
-##MCPD DAEMON RESTART SOLVE 
+## MCPD DAEMON RESTART SOLVE 
 tmsh stop sys service mcpd
 mkdir /shared/.snapshots_d
 reboot
@@ -22,7 +22,7 @@ bigstart stop httpd
 bigstart start https
 
 
-##SSH DAEMON NOT WORKING SOLVE
+## SSH DAEMON NOT WORKING SOLVE
 bigstart stop sshd
 ssh-keygen -t rsa -f /config/ssh/ssh_host_rsa_key
 restorecon -rF /config/ssh/ssh_host_*
