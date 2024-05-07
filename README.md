@@ -6,14 +6,18 @@
 * Memory 8192
 * 1 socket 4 cores
 
+## CLI LOGIN
 
+username: root
+password: default
 
-## MCPD DAEMON RESTART SOLVE 
+## MCPD DAEMON RESTART SOLVE  (V14)
 
     tmsh stop sys service mcpd
     mkdir /shared/.snapshots_d
     reboot
 
+## CONFIGURE IP FOR MANAGEMENT  (V14)
     tmsh
     modify sys global-settings mgmt-dhcp dhcpv4
     modify sys global-settings mgmt-dhcp enabled
@@ -23,7 +27,7 @@
     bigstart start https
 
 
-## SSH DAEMON NOT WORKING SOLVE
+## SSH DAEMON NOT WORKING SOLVE (V14)
 
     bigstart stop sshd
     ssh-keygen -t rsa -f /config/ssh/ssh_host_rsa_key
