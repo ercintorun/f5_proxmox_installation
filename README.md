@@ -35,4 +35,38 @@ password: default
     bigstart restart sshd 
     journalctl -u sshd
 
+## License Install
+
+Log in to tmsh by entering the following command:
+    tmsh
+
+To view the current license details, enter the following command:
+    show /sys license
+
+To exit tmsh, enter the following command:
+    quit
+
+Using tmsh to install or reactivate the license
+
+Note: Traffic processing is briefly interrupted as the BIG-IP system reloads the new license. This interruption may result in a failover. F5 recommends that you perform the following procedures on the standby BIG-IP device.
+
+Log in to tmsh by entering the following command:
+    tmsh
+
+Enter the license key or add-on key, using the following command syntax:
+To install or re-activate only the license base registration key, use the following command syntax:
+
+    install /sys license registration-key <License-Key>
+
+To install or re-activate only the add-on key, use the following command syntax:
+
+    install /sys license add-on-keys { <Add-On-Key> }
+
+To install or re-activate the license base registration key and add-on key, use the following command syntax:
+
+    install /sys license registration-key <license-key> add-on-keys { <add-on-key> }
+
+For example:
+
+    install /sys license registration-key ABCDE-ABCDE-ABCDE-ABCDE-ABCDEFG add-on-keys { ABCDEFG-ABCDEFG }
 
